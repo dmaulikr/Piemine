@@ -33,7 +33,10 @@ class GameScene: SKScene {
         for row in 0..kWorldTileDivisor {
             for col in 0..kWorldTileDivisor {
                 let tileNode = SKSpriteNode(texture: tileAtlas.textureNamed("tile5.png"))
-                tileNode.position = CGPointMake(x: row * kWorldTileSize - kWorldCenter, y: (kWorldSize - (col * kWorldTileSize)) - kWorldCenter)
+                let xPos = row * kWorldTileSize - kWorldCenter
+                let yPos = kWorldSize - col * kWorldTileSize - kWorldCenter
+                tileNode.position = CGPointMake(Float(xPos), Float(yPos))
+//                tileNode.position = CGPointMake(x: row * kWorldTileSize - kWorldCenter, y: (kWorldSize - (col * kWorldTileSize)) - kWorldCenter)
                 tileNode.zPosition = -1.0
                 tileNode.blendMode = .Replace
                 backgroundTiles.append(tileNode)
