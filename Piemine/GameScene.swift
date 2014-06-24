@@ -8,7 +8,39 @@
 
 import SpriteKit
 
+let kWorldTileDivisor = 32  // number of tiles
+let kWorldSize = 4096       // pixel size of world (square)
+let kWorldTileSize = (kWorldSize / kWorldTileDivisor)
+
+let kWorldCenter = 2048
+
+let kLevelMapSize = 256    // pixel size of level map (square)
+let kLevelMapDivisor = (kWorldSize / kLevelMapSize)
+
 class GameScene: SKScene {
+    
+    var backgroundTiles: SKSpriteNode[]
+    
+    init(size: CGSize) {
+        backgroundTiles = Array<SKSpriteNode>()
+        super.init(size: size)
+        loadAssets()
+    }
+    
+    func loadAssets() {
+        let tileAtlas = SKTextureAtlas(named: "Background")
+        
+        for row in 0..kWorldTileDivisor {
+            for col in 0..kWorldTileDivisor {
+                let tileNode = SKSpriteNode(texture: tileAtlas.textureNamed("tile5.png"))
+                tileNode.position = CGPointMake(x: row * kWorldTileSize - kWorldCenter, y: (kWorldSize - (col * kWorldTileSize)) - kWorldCenter)
+                tileNode.zPosition = -1.0
+                tileNode.blendMode = .Replace
+                backgroundTiles.append(tileNode)
+            }
+        }
+    }
+    
     override func didMoveToView(view: SKView) {
         /* Setup your scene here */
         let myLabel = SKLabelNode(fontNamed:"Chalkduster")

@@ -29,20 +29,28 @@ class GameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if let scene = GameScene.unarchiveFromFile("GameScene") as? GameScene {
-            // Configure the view.
-            let skView = self.view as SKView
-            skView.showsFPS = true
-            skView.showsNodeCount = true
-            
-            /* Sprite Kit applies additional optimizations to improve rendering performance */
-            skView.ignoresSiblingOrder = true
-            
-            /* Set the scale mode to scale to fit the window */
-            scene.scaleMode = .AspectFill
-            
-            skView.presentScene(scene)
+        var viewSize: CGSize  = self.view.bounds.size;
+        
+        // On iPhone/iPod touch we want to see a similar amount of the scene as on iPad.
+        // So, we set the size of the scene to be double the size of the view, which is
+        // the whole screen, 3.5- or 4- inch. This effectively scales the scene to 50%.
+        if (UIDevice.currentDevice().userInterfaceIdiom == .Phone) {
+            viewSize.height *= 2;
+            viewSize.width *= 2;
         }
+        let scene = GameScene(size: viewSize)
+        // Configure the view.
+        let skView = self.view as SKView
+        skView.showsFPS = true
+        skView.showsNodeCount = true
+        
+        /* Sprite Kit applies additional optimizations to improve rendering performance */
+        skView.ignoresSiblingOrder = true
+        
+        /* Set the scale mode to scale to fit the window */
+        scene.scaleMode = .AspectFill
+        
+        skView.presentScene(scene)
     }
 
     override func shouldAutorotate() -> Bool {

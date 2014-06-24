@@ -14,6 +14,7 @@
 		FCBABCEE19592EFB0022507B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = FCBABCEC19592EFB0022507B /* Main.storyboard */; };
 		FCBABCF019592EFB0022507B /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = FCBABCEF19592EFB0022507B /* Images.xcassets */; };
 		FCBABCFC19592EFB0022507B /* PiemineTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = FCBABCFB19592EFB0022507B /* PiemineTests.swift */; };
+		FCEC7709195953D200BCAEAD /* tile5.png in Resources */ = {isa = PBXBuildFile; fileRef = FCEC7708195953D200BCAEAD /* tile5.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -38,6 +39,7 @@
 		FCBABCF519592EFB0022507B /* PiemineTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PiemineTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		FCBABCFA19592EFB0022507B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FCBABCFB19592EFB0022507B /* PiemineTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PiemineTests.swift; sourceTree = "<group>"; };
+		FCEC7708195953D200BCAEAD /* tile5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = tile5.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -85,6 +87,7 @@
 				FCBABCEA19592EFB0022507B /* GameViewController.swift */,
 				FCBABCEC19592EFB0022507B /* Main.storyboard */,
 				FCBABCEF19592EFB0022507B /* Images.xcassets */,
+				FCEC77051959533500BCAEAD /* Assets */,
 				FCBABCE219592EFB0022507B /* Supporting Files */,
 			);
 			path = Piemine;
@@ -113,6 +116,30 @@
 				FCBABCFA19592EFB0022507B /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		FCEC77051959533500BCAEAD /* Assets */ = {
+			isa = PBXGroup;
+			children = (
+				FCEC77061959534100BCAEAD /* Texture Atlases */,
+			);
+			name = Assets;
+			sourceTree = "<group>";
+		};
+		FCEC77061959534100BCAEAD /* Texture Atlases */ = {
+			isa = PBXGroup;
+			children = (
+				FCEC77071959534900BCAEAD /* Background.atlas */,
+			);
+			name = "Texture Atlases";
+			sourceTree = "<group>";
+		};
+		FCEC77071959534900BCAEAD /* Background.atlas */ = {
+			isa = PBXGroup;
+			children = (
+				FCEC7708195953D200BCAEAD /* tile5.png */,
+			);
+			name = Background.atlas;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -198,6 +225,7 @@
 				FCBABCF019592EFB0022507B /* Images.xcassets in Resources */,
 				FCBABCE719592EFB0022507B /* GameScene.sks in Resources */,
 				FCBABCEE19592EFB0022507B /* Main.storyboard in Resources */,
+				FCEC7709195953D200BCAEAD /* tile5.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -407,6 +435,7 @@
 				FCBABD0119592EFB0022507B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		FCBABD0219592EFB0022507B /* Build configuration list for PBXNativeTarget "PiemineTests" */ = {
 			isa = XCConfigurationList;
@@ -415,6 +444,7 @@
 				FCBABD0419592EFB0022507B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
